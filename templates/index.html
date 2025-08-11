@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telegram Channel Fetcher</title>
+</head>
+<body>
+    <h1>گزارش پیام‌های کانال</h1>
+    <form method="POST">
+        <input type="text" name="channel" placeholder="مثال: @test" required>
+        <button type="submit">گرفتن پیام‌ها</button>
+    </form>
+    {% if messages %}
+    <h2>پیام‌ها:</h2>
+    <ul>
+        {% for m in messages %}
+        <li><b>{{ m.date }}</b> - {{ m.text }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
